@@ -79,7 +79,7 @@ def facing():
                      rip6=face.text
                  if elem.tag=='swif':
                      swif=face.text
-             url = 'http://localhost:8181/restconf/operations/network-topology:network-topology/topology/topology-netconf/node/'+str(node)+'/yang-ext:mount/hicn:face-ip-add'
+             url = 'http://'+str(results.odl)+':8181/restconf/operations/network-topology:network-topology/topology/topology-netconf/node/'+str(node)+'/yang-ext:mount/hicn:face-ip-add'
              headers = {'content-type': 'application/xml','accept':'application/xml'}
 
              xtop = ET.Element('input')
@@ -135,7 +135,7 @@ def punting():
                      lent=elem.text
                  if elem.tag=='swif':
                      swif=elem.text
-             url = 'http://localhost:8181/restconf/operations/network-topology:network-topology/topology/topology-netconf/node/'+str(node)+'/yang-ext:mount/hicn:punting-add'
+             url = 'http://'+str(results.odl)+':8181/restconf/operations/network-topology:network-topology/topology/topology-netconf/node/'+str(node)+'/yang-ext:mount/hicn:punting-add'
              headers = {'content-type': 'application/xml','accept':'application/xml'}
         
              xtop = ET.Element('input')
@@ -188,7 +188,7 @@ def routing():
                      lent=elem.text
                  if elem.tag=='faceid':
                      faceid=elem.text
-             url = 'http://localhost:8181/restconf/operations/network-topology:network-topology/topology/topology-netconf/node/'+str(node)+'/yang-ext:mount/hicn:route-nhops-add'
+             url = 'http://'+str(results.odl)+':8181/restconf/operations/network-topology:network-topology/topology/topology-netconf/node/'+str(node)+'/yang-ext:mount/hicn:route-nhops-add'
              headers = {'content-type': 'application/xml','accept':'application/xml'}
 
 
@@ -253,7 +253,7 @@ def telemetering():
    for node in nodes:
       response=None
       url=None
-      url = 'http://localhost:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/'+str(node)+'/yang-ext:mount'
+      url = 'http://'+str(results.odl)+':8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/'+str(node)+'/yang-ext:mount'
       headers = {'content-type': 'application/xml','accept':'application/xml'}
       response = requests.get(url, auth=('admin', 'admin'),headers=headers)
       if response.status_code in SUCCESS:
