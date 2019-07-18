@@ -15,6 +15,9 @@ parser.add_argument('-act', action="store",  dest='act',
                     help='Indicate your operation')
 parser.add_argument('-odl', action="store",  dest='odl'
                     )
+
+parser.add_argument('-influx', action="store",  dest='influx'
+                    )
 results = parser.parse_args()
 
 # acceptable response code
@@ -247,7 +250,10 @@ def telemetering():
  old={'sc-sl':(0,0),'sc-cc':(0,0),'sl-cl1':(0,0),'sl-cl2':(0,0)}
 
 # Set up a client for InfluxDB
- dbclient = InfluxDBClient('10.100.95.111', 8086, 'admin', 'masmas', 'demo_clus')
+if str(results.influx)!='':
+ print('Please indicate the influxdb IP address')
+else:
+ dbclient = InfluxDBClient(str(results.influx), 8086, 'admin', 'masmas', 'demo_clus')
 
  while True:
    for node in nodes:
@@ -351,4 +357,4 @@ elif str(results.act)=='telem':
  telemetering()
 
 else:
- print('Usage -act [face|punt|route|add|del|telem]  -odl [odl IP address]')
+ print('Usage -act [face|punt|route|add|del|telem]  -odl [odl IP address] -influx [IP address]')
