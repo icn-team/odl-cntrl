@@ -1,0 +1,41 @@
+<config>
+<puntes>
+	<sc>
+        	<ip6>b001::</ip6>
+                <len>16</len>
+		<swif>1</swif>
+	</sc>
+	<sl>
+
+        	<ip6>b001::</ip6>
+                <len>16</len>
+		<swif>1</swif>
+        </sl>
+</puntes>
+
+<routes>
+	<sc>
+                <prefix>b001::</prefix>
+                <len>16</len>
+                <faceid>0</faceid>
+	</sc>
+	<sl>
+                <prefix>b001::</prefix>
+                <len>16</len>
+                <faceid>0</faceid>
+	</sl>
+</routes>
+
+<faces>
+	<sc>
+                <lip6>2001::1</lip6>
+                <rip6>2001::2</rip6>
+                <swif>1</swif>
+	</sc>
+	<sl>
+                <lip6>2001::1</lip6>
+                <rip6>2001::2</rip6>
+                <swif>1</swif>
+	</sl>
+</faces>
+</config>
