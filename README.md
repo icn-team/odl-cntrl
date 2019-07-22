@@ -9,4 +9,5 @@ Each tag allows to have the configuration of multiple remote switches. Please, f
 * run the odl.py script to push the configuration
     *  cd /hicn/cntrl/ && ./odl.py -act add
     *  ./odl.py -act [face|punt|route|telem] -odl [odl IP address] -influx [Influxdb IP address]
-      (Please note that [-act telem] is a blocking execution to receive telemetry)
+ 
+Please note that [-act telem] is a blocking execution to receive telemetry 
