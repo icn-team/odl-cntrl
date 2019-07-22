@@ -31,8 +31,6 @@ def mounting():
  for node in nodes:
    response= None
    url = 'http://'+str(results.odl)+':8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/'+str(node)
-   print(url)
-   exit
    tree = ET.parse('tnode.xml')
    root = tree.getroot()
    for elem in root:
