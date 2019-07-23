@@ -75,11 +75,11 @@ def facing():
            for face in faces:
              for elem in face:
                  if elem.tag=='lip6':
-                     lip6=face.text
+                     lip6=elem.text
                  if elem.tag=='rip6':
-                     rip6=face.text
+                     rip6=elem.text
                  if elem.tag=='swif':
-                     swif=face.text
+                     swif=elem.text
              url = 'http://'+str(results.odl)+':8181/restconf/operations/network-topology:network-topology/topology/topology-netconf/node/'+str(node)+'/yang-ext:mount/hicn:face-ip-add'
              headers = {'content-type': 'application/xml','accept':'application/xml'}
 
